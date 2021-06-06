@@ -1,0 +1,107 @@
+<%- include("header.html") %>
+
+<style>
+    :root {
+        font-size: 1.3em;
+        --gradient: linear-gradient(135deg, var(--colour-dark-purple), var(--colour-dark-blue));
+
+    }
+    #github > div *, .icon * {
+        vertical-align: middle;
+        padding-left: 5px;
+    }
+    a {
+        color: inherit;
+    }
+    .bg-gradient {
+        background: var(--gradient);
+    }
+
+    .fullwidth {
+        width: 100%;
+    }
+
+    .projects > * {
+        flex-basis: 10em !important;
+        border: 2px solid var(--gradient);
+    }
+
+    .top > * {
+        flex-basis: 20em !important;
+    }
+
+    .gradient-text {
+        background-color: transparent;
+        background-size: 100%;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+
+        background-clip: text;
+        text-fill-color: transparent;
+    }
+
+    .pronouns {
+        background-image: linear-gradient(135deg, var(--colour-blue), var(--colour-purple));
+    }
+
+    .squirtgun {
+        background-image: linear-gradient(135deg, var(--colour-yellow), var(--colour-purple));
+    }
+
+    .profiles {
+        background-image: linear-gradient(135deg, var(--colour-green), var(--colour-blue));
+    }
+
+    .pastebin {
+        background-image: linear-gradient(135deg, var(--colour-red), var(--colour-yellow));
+    }
+</style>
+
+<div class="header bg-gradient">__lucyy</div>
+
+<div class="flowbox top">
+    <div>
+        <h1>Hiya! I'm Lucy.</h1>
+        <p>I do silly computer stuff. I mostly work in Java and occasionally JavaScript, but I love tinkering and I'm always up for playing with something new.</p>
+        <div>
+            <div class="icon"><a href="https://github.com/lucyy-mc"><ion-icon size="large" name="logo-github"></ion-icon><span>lucyy-mc</span></a></div>
+            <div class="icon"><a href="https://support.lucyy.me"><ion-icon size="large" name="logo-discord"></ion-icon><span>__lucyy#0001 | https://support.lucyy.me</span></a></div>
+            <div class="icon"><a href="mailto:lucy@poulton.xyz"><ion-icon size="large"  name="mail-outline"></ion-icon><span>lucy@poulton.xyz</span></a></div>
+        </div>
+    </div>
+    <div id="github">
+        <h2>GitHub stats</h2>
+        <div><ion-icon name="git-commit-outline"></ion-icon><span><%= github["commits"] %> commits</span></div>
+        <div><ion-icon name="star-outline"></ion-icon><span><%= github["stars"] %> stars</span></div>
+        <div><ion-icon name="book-outline"></ion-icon><span><%= github["repos"] %> repos</span></div>
+        <div><ion-icon name="people-outline"></ion-icon><span>Contributed to <%= github["contributed"] %> repos</span></div>
+    </div>
+</div>
+<h2 style="margin-top: 2em">Projects</h2>
+<p style="text-align:center">Here's some of the stuff I'm working on.</p>
+<div class="flowbox projects">
+    <div>
+        <h3><span class="gradient-text pronouns">ProNouns</span></h3>
+        <p>ProNouns is a Minecraft server plugin that lets players set their pronouns, which server admins can substitute into server messages.</p>
+        <a href="https://github.com/lucyy-mc/pronouns">GitHub</a> | <a href="https://lucyy.me/pronouns">Polymart</a> | <a href="https://www.spigotmc.org/resources/pronouns.86199/">SpigotMC</a>
+    </div>
+    <div>
+        <h3><span class="gradient-text squirtgun">Squirtgun</span></h3>
+        <p>Squirtgun is a multi-purpose Minecraft plugin library, providing a command framework, formatting engine and basic cross-platform server API.</p>
+        <a href="https://github.com/lucyy-mc/squirtgun">GitHub</a>
+    </div>
+    <div>
+        <h3><span class="gradient-text profiles">ProFiles</span></h3>
+        <p>ProFiles is a Minecraft server plugin that gives each player a profile. Admins can configure fields as part of this profile.</p>
+        <a href="https://github.com/lucyy-mc/profiles">GitHub</a> | <a href="https://lucyy.me/profiles">Polymart</a>
+    </div>
+    <div>
+        <h3><a href="https://paste.lucyy.me" class="gradient-text pastebin">Lucy's Pretty Pastebin</a></h3>
+        <p>An Hastebin fork with a new frontend, designed to be prettier and easier to use.</p>
+        <a href="https://github.com/lucyy-mc/haste-server">GitHub</a> | <a href="https://paste.lucyy.me">Hosted</a>
+    </div>
+</div>
+
+<%- include("footer.html") %>

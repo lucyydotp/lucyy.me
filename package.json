@@ -1,0 +1,24 @@
+{
+  "name": "lucyy.me",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucyy-mc/lucyy.me.git"
+  },
+  "author": "Lucy Poulton (lucyy-mc)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lucyy-mc/lucyy.me/issues"
+  },
+  "homepage": "https://lucyy.me",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1"
+  }
+}
