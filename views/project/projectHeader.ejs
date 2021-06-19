@@ -30,10 +30,12 @@
     }
 
     .ribbon > span {
+        display: inline-block;
         font-weight: bold;
         margin: 0 0.5em;
-        padding: 0.5em;
+        padding: 0.5em 1em;
         background: transparent;
+        cursor: pointer;
     }
 
     .selected {
@@ -56,19 +58,26 @@
                     <h2>No downloads</h2>
                 <% } %>
             </div>
+            <% if (project.hasOwnProperty("supports")) { %>
             <div>
                 <h3 class="gradient-text">Supported Platforms</h3>
                 <ul>
-                    <li>Bukkit/Spigot/Paper 1.8-1.16</li>
-                    <li>Sponge 8</li>
+                    <% for (let platform of project.supports) { %>
+                    <li><%= platform %></li>
+                    <% } %>
                 </ul>
             </div>
+            <% } %>
         </div>
         <div style="flex-grow: 1">
             <div class="ribbon">
-                <span class="button selected">Description</span>
-                <span class="button">Updates</span>
-                <span class="button">Beta</span>
-                <span class="button">Wiki</span>
-                <span class="button">Config</span>
+                <% let items = ["description", "updates", "beta", "wiki", "config"];
+                if (project.hasOwnProperty("source")) {
+                    items.push("source")
+                }
+                for (let item of items) {%>
+                <span class="button<% if (page === item){%> selected<%}%>" onclick="window.location.href = './<%= item %>'">
+                    <%= item.charAt(0).toUpperCase() %><%= item.substr(1) %>
+                </span>
+                <% } %>
             </div>

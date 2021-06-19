@@ -7,6 +7,13 @@ module.exports = {
         "Polymart": "https://lucyy.me/pronouns",
         "SpigotMC": "https://www.spigotmc.org/resources/pronouns.86199/"
     },
+    supports: [
+        "Bukkit/Spigot/Paper 1.8-1.16",
+        "BungeeCord",
+        "Sponge 8",
+        "Fabric (soon)"
+    ],
+    source: "https://github.com/lucyy-mc/pronouns",
     build: {
         buildType: "LucyStuff_ProNouns_Build",
         branch: "the-big-cleanup",

@@ -71,7 +71,7 @@ module.exports = {
         }
 
         this.__artifactCache[project.name] = {
-            expires: Date.now() + 72000000, // 2 hours
+            expires: Date.now() + 2592000000, // 30 days
             data: out
         };
 

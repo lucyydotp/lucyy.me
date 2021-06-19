@@ -1,0 +1,10 @@
+<%- include("projectHeader.ejs") %>
+<% for (let update of project.releases) { %>
+    <h2><span class="gradient-text"><%= update.name %></span></h2>
+        <ul>
+            <% for (let change of update.changelog) { %>
+                <li><%= change %></li>
+            <% } %>
+        </ul>
+<% } %>
+<%- include("projectFooter.ejs") %>

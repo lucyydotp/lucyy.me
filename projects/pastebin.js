@@ -5,5 +5,6 @@ module.exports = {
     links: {
         "GitHub": "https://github.com/lucyy-mc/haste-server",
         "Hosted": "https://paste.lucyy.me/"
-    }
+    },
+    releases: []
 }

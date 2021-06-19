@@ -5,5 +5,6 @@ module.exports = {
     links: {
         "GitHub": "https://github.com/lucyy-mc/profiles",
         "Polymart": "https://lucyy.me/profiles"
-    }
+    },
+    releases: []
 }
