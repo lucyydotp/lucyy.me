@@ -29,34 +29,6 @@
     .top > * {
         flex-basis: 20em !important;
     }
-
-    .gradient-text {
-        background-color: transparent;
-        background-size: 100%;
-        -webkit-background-clip: text;
-        -moz-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        -moz-text-fill-color: transparent;
-
-        background-clip: text;
-        text-fill-color: transparent;
-    }
-
-    .pronouns {
-        background-image: linear-gradient(135deg, var(--colour-blue), var(--colour-purple));
-    }
-
-    .squirtgun {
-        background-image: linear-gradient(135deg, var(--colour-yellow), var(--colour-purple));
-    }
-
-    .profiles {
-        background-image: linear-gradient(135deg, var(--colour-green), var(--colour-blue));
-    }
-
-    .pastebin {
-        background-image: linear-gradient(135deg, var(--colour-red), var(--colour-yellow));
-    }
 </style>
 
 <div class="header bg-gradient">__lucyy</div>
@@ -82,26 +54,14 @@
 <h2 style="margin-top: 2em">Projects</h2>
 <p style="text-align:center">Here's some of the stuff I'm working on.</p>
 <div class="flowbox projects">
-    <div>
-        <h3><span class="gradient-text pronouns">ProNouns</span></h3>
-        <p>ProNouns is a Minecraft server plugin that lets players set their pronouns, which server admins can substitute into server messages.</p>
-        <a href="https://github.com/lucyy-mc/pronouns">GitHub</a> | <a href="https://lucyy.me/pronouns">Polymart</a> | <a href="https://www.spigotmc.org/resources/pronouns.86199/">SpigotMC</a>
-    </div>
-    <div>
-        <h3><span class="gradient-text squirtgun">Squirtgun</span></h3>
-        <p>Squirtgun is a multi-purpose Minecraft plugin library, providing a command framework, formatting engine and basic cross-platform server API.</p>
-        <a href="https://github.com/lucyy-mc/squirtgun">GitHub</a>
-    </div>
-    <div>
-        <h3><span class="gradient-text profiles">ProFiles</span></h3>
-        <p>ProFiles is a Minecraft server plugin that gives each player a profile. Admins can configure fields as part of this profile.</p>
-        <a href="https://github.com/lucyy-mc/profiles">GitHub</a> | <a href="https://lucyy.me/profiles">Polymart</a>
-    </div>
-    <div>
-        <h3><a href="https://paste.lucyy.me" class="gradient-text pastebin">Lucy's Pretty Pastebin</a></h3>
-        <p>An Hastebin fork with a new frontend, designed to be prettier and easier to use.</p>
-        <a href="https://github.com/lucyy-mc/haste-server">GitHub</a> | <a href="https://paste.lucyy.me">Hosted</a>
-    </div>
+
+    <% for (let project of projects) { %>
+        <div>
+            <h3><span class="gradient-text" style="background-image: <%= gradient(project) %>"><%= project.name %></span></h3>
+            <p><%= project.desc %></p>
+            <%- Object.keys(project.links).map(x => `<a href=${project.links[x]}>${x}</a>`).join(" | ") %>
+        </div>
+    <% } %>
 </div>
 
 <%- include("footer.html") %>
