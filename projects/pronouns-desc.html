@@ -1,0 +1,125 @@
+<p><b>ProNouns</b> is a plugin aimed at LGBTQ+ servers allowing players to set their pronouns properly. No more faffing
+    with permission groups, no more nicknaming, no more worrying about people with less common pronoun sets!</p>
+
+<p>
+<h3>Features</h3>
+<ul>
+    <li>Players can <b>set their pronouns</b> individually
+    </li>
+    <li>Players can set <b>multiple pronoun sets</b>
+    </li>
+    <li><b>PlaceholderAPI </b>support - write pronoun-aware automated messages!
+    </li>
+    <li>Custom <b>player-defined pronoun sets</b>
+    </li>
+    <li><b>MySQL support</b> for BungeeCord servers
+    </li>
+    <li>It's <b>really pretty</b> and supports <b>RGB</b> throughout
+    </li>
+</ul>
+</p>
+
+<p>
+<h3>Commands</h3>
+<ul>
+    <li><b>/pronouns</b> - Shows all available commands for the plugin.
+    </li>
+    <li><b>/pronouns set</b> - Sets your pronouns. If you use more than one set, put your "preferred" set first (they'll
+        be used in automated messages if configured), and put the rest separated by a space. For example, /pronouns set
+        she they
+    </li>
+    <li><b>/pronouns clear</b> - Clears your pronouns
+
+    </li>
+    <li><b>/pronouns show</b> - Shows your, or another player's, pronouns.
+    </li>
+    <li><b>/pronouns list</b> - List all predefined pronoun sets. (if yours aren't listed here, you can still use them -
+        see "Custom Pronouns" below for more info!)
+    </li>
+    <li><b>/pronouns preview</b> - Test out your pronouns in a sentence.
+    </li>
+    <li><b>/pronouns sudo</b> (requires pronouns.admin permission) - Run a pronouns command as another user.
+    </li>
+    <li><b>/pronouns reload</b> (requires pronouns.admin permission) - Reloads the configuration file.
+    </li>
+</ul>
+</p>
+<p>
+<h3>Predefined Pronouns</h3>
+To use these sets, you don't need to type out all 6 pronouns! Just use the first one out of these sets:
+<ul>
+    <li><b>he </b>(he/him/he's/his/his/himself)</li>
+    <li><b>she </b>(she/her/she's/her/hers/herself)</li>
+    <li><b>they </b>(they/them/they're/their/theirs/themself)</li>
+    <li><b>any</b> (uses they/them in placeholders but shows as "Any")</li>
+    <li><b>ask</b> (uses they/them in placeholders but shows as "Ask")</li>
+</ul>
+</p>
+<p>
+<h3>Custom Pronouns</h3>
+Are your pronouns not listed in /pronouns list? No problem! Setting custom pronouns is super easy. Here's how you do it:
+
+<b>/pronouns set subjective/objective/progressive/possessive-adj/possessive-pronoun/reflexive</b>
+
+Here are some examples just in case you're not a linguist:
+/pronouns set he/him/he's/his/his/himself
+/pronouns set she/her/she's/her/hers/herself
+/pronouns set they/them/they're/their/theirs/themself
+</p>
+<p>
+    <h3>Filter</h3>
+To prevent abuse, the plugin is equipped with a basic regex-based filter. By default it detects the words "apache" and "helicopter". It can be disabled and custom rules can be added
+<b>from the config</b>. Players with the permission <b>pronouns.bypass</b> will not be affected by this
+</p>
+---
+<b>PlaceholderAPI
+</b>
+ProNouns provides a selection of PAPI placeholders so you can use pronouns in messages!
+Before using these, install the PlaceholderAPI expansion with <b>/papi ecloud download pronouns</b> followed by <b>/papi
+    reload</b>.
+<ul>
+    <li>%pronouns_pronouns% - pronouns, in the Subjective/Objective format ie She/Her
+    </li>
+    <li>%pronouns_subjective% - subjective pronoun
+    </li>
+    <li>%pronouns_objective% - objective pronoun
+    </li>
+    <li>%pronouns_progressive% - progressive pronoun
+    </li>
+    <li>%pronouns_possessiveadj% - possessive adjective
+    </li>
+    <li>%pronouns_possessivepro% - possessive pronoun
+    </li>
+    <li>%pronouns_reflexive% - reflexive pronouns
+    </li>
+    <li>%pronouns_all% - all 6 pronouns
+    </li>
+</ul>
+All placeholders also have some formatting modifiers that can be added to the end of the name to control capitalisation:
+<ul>
+    <li>upper - uppercase (SHE)
+
+    </li>
+    <li>lower - lowercase (she)
+
+    </li>
+    <li>capital - first letter uppercase, everything else lowercase (She)
+    </li>
+</ul>
+Some examples using the she/her pronoun set:
+
+<ul>
+    <li>%pronouns_subjective_upper% - SHE
+    </li>
+    <li>%pronoun_possessivepro_capital% - Hers
+    </li>
+</ul>
+---
+<b>Data Collection</b>
+
+This plugin uses bStats to gather anonymised telemetry data. All data collected can be viewed at <a
+        href="https://bstats.org/plugin/bukkit/ProNouns/9519">https://bstats.org/plugin/bukkit/ProNouns/9519</a>.
+--
+<b>Developer API
+</b>
+An API is available for developers. <a href="#">More info here.</a>

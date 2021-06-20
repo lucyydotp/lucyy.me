@@ -58,7 +58,7 @@
     <% for (let project of projects) { %>
         <div>
             <h3><span class="gradient-text" style="background-image: <%= gradient(project) %>"><%= project.name %></span></h3>
-            <p><%= project.desc %></p>
+            <p><%= project.shortdesc ?? project.desc %></p>
             <%- Object.keys(project.links).map(x => `<a href=${project.links[x]}>${x}</a>`).join(" | ") %>
         </div>
     <% } %>

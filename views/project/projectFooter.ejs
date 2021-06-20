@@ -1,5 +1,28 @@
 </div>
 </div>
 </div>
+<script>
+    function openDownloadsDialog(download) {
+        let dialogDiv = document.createElement("div");
+        dialogDiv.classList.add("floating");
+        let innerDiv = document.createElement("div");
+        innerDiv.innerHTML += "<h3>Download</h3>";
+
+        for (let artifact of Object.keys(download.artifacts)) {
+            let uri = download.artifacts[artifact];
+            if (artifact !== "version") {
+                let div = document.createElement("div");
+                div.classList.add("button");
+                div.style.marginBottom = "1em";
+                div.onclick = () => window.open(uri);
+                div.innerHTML = `<h4>${artifact}</h4>
+<span>${download.artifacts[artifact].split("/").slice(-1)[0]}</span>`;
+                innerDiv.appendChild(div);
+            }
+        }
+        dialogDiv.appendChild(innerDiv);
+        document.body.appendChild(dialogDiv);
+    }
+</script>
 
 <%- include("../footer.html") %>

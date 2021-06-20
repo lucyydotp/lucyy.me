@@ -27,7 +27,7 @@ module.exports = {
         }
         if (project.build == null) return null;
 
-        return fetch(`${config.teamcity}/app/rest/builds?locator=buildType:id:${project.build.buildType},branch:name:${project.build.branch}`,
+        return fetch(`${config.teamcity}/guestAuth/app/rest/builds?locator=buildType:id:${project.build.buildType},branch:name:${project.build.branch}`,
             {headers: {"Accept": "application/json"}})
             .then(data => data.json())
             .then(async json => {
@@ -55,19 +55,21 @@ module.exports = {
 
         let out = {}
         for (let artifactName of Object.keys(project.build.artifacts)) {
-            let artifact = project.build.artifacts[artifactName];
-            let remote = await fetch(`${config.teamcity}/app/rest/builds/id:${buildId}` +
-                `/artifacts/children/${artifact.dir}`, {headers: {"Accept": "application/json"}})
-            let remoteJson = await remote.json()
+            try {
+                let artifact = project.build.artifacts[artifactName];
+                let remote = await fetch(`${config.teamcity}/guestAuth/app/rest/builds/id:${buildId}` +
+                    `/artifacts/children/${artifact.dir}`, {headers: {"Accept": "application/json"}})
+                let remoteJson = await remote.json()
 
-            let file = remoteJson.file.find(x => artifact.match(x.name));
-            if (file != null) {
-                out[artifactName] = config.teamcity + file.href;
-            }
+                let file = remoteJson.file.find(x => artifact.match(x.name));
+                if (file != null) {
+                    out[artifactName] = config.teamcity + file.content.href;
+                }
 
-            if (artifact.hasOwnProperty("version") && out.version === undefined) {
-                out.version = file.name.match(artifact.version)[0]
-            }
+                if (artifact.hasOwnProperty("version") && out.version === undefined) {
+                    out.version = file.name.match(artifact.version)[0]
+                }
+            } catch (e) { }
         }
 
         this.__artifactCache[project.name] = {

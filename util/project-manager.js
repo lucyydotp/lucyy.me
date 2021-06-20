@@ -3,16 +3,16 @@ const projectUtils = require("./project-utils");
 
 let out = [];
 
-(async () => {
-    for (let file of fs.readdirSync("projects")) {
+out.init = async function () {
+    for (let file of fs.readdirSync("projects").filter(file => file.endsWith(".js"))) {
         let project = require(`../projects/${file.substr(0, file.length - 3)}`);
         if (project.hasOwnProperty("releases")) {
             for (let release of project.releases) {
                 release.artifacts = await projectUtils.getArtifacts(project, release.build);
             }
         }
-        out.push(project);
+        this.push(project);
     }
-})();
+};
 
 module.exports = out;

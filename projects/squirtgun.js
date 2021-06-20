@@ -5,6 +5,10 @@ module.exports = {
     links: {
         "GitHub": "https://github.com/lucyy-mc/squirtgun"
     },
+    supports: [
+        "Bukkit/Spigot/Paper 1.8-1.16",
+        "BungeeCord"
+    ],
     build: {
         buildType: "LucyStuff_Squirtgun_Publish",
         branch: "master",
@@ -32,7 +36,7 @@ module.exports = {
         {
             name: "2.0.0-pre4",
             build: 272,
-            changelog: "Changed a load of stuff"
+            changelog: ["Changed a load of stuff"]
         }
     ]
 }

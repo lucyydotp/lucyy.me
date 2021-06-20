@@ -56,4 +56,14 @@ module.exports = (app) => {
                 release: releases[0]
             })
     })
+
+    app.get("/:project/source", (req, res) => {
+        const project = getProject(req);
+        if (project === undefined) {
+            res.redirect("/");
+            return;
+        }
+
+        res.redirect(project.source);
+    });
 };

@@ -1,5 +1,5 @@
 {
   "port": 3000,
-  "teamcity": "https://ci.lucyy.me/guestAuth",
+  "teamcity": "https://ci.lucyy.me",
   "profileUrl": "https://raw.githubusercontent.com/lucyy-mc/lucyy-mc/main/profile.json"
 }

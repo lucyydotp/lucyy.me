@@ -1,10 +1,13 @@
 <%- include("projectHeader.ejs") %>
 <% for (let update of project.releases) { %>
+    <div>
     <h2><span class="gradient-text"><%= update.name %></span></h2>
+        <h3><span class="button" onclick="openDownloadsDialog(<%= JSON.stringify(update) %>)">Download</span></h3>
         <ul>
             <% for (let change of update.changelog) { %>
                 <li><%= change %></li>
             <% } %>
         </ul>
+    </div>
 <% } %>
 <%- include("projectFooter.ejs") %>
