@@ -6,7 +6,8 @@ module.exports = {
     wiki: {
         "commands": "Commands",
         "config": "Config",
-        "testpage3": "Test Page 3"
+        "placeholders": "Placeholders",
+        "developer": "Developers"
     },
     links: {
         "GitHub": "https://github.com/lucyy-mc/pronouns",

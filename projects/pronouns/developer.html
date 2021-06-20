@@ -1,0 +1,47 @@
+<h3>Developer API</h3>
+<h3><img alt="Version badge"
+         src="https://img.shields.io/nexus/r/me.lucyy/pronouns-api?label=version&server=https://repo.lucyy.me&color=%23adf"></h3>
+<p>ProNouns exposes an API for Java plugin developers to use. Versioning works slightly differently for the API - the
+    major and minor versions must match the plugin versions. For example, API v1.0 works on 1.0.0-RC1, 1.0.0, 1.0.5 etc,
+    but not 1.5.x. Javadocs are available at <a href="https://javadoc.lucyy.me">https://javadoc.lucyy.me</a>.</p>
+<p>Currently the API is only accessible from Bukkit.</p>
+
+<h3>Including</h3>
+
+Include with Maven as follows:
+<pre><code class="language-xml" style="font-size: 0.9em">&lt;repositories&gt;
+    ...
+    &lt;repository&gt;
+        &lt;id&gt;lucy&lt;/id&gt;
+        &lt;url&gt;https://repo.lucyy.me/repository/public/&lt;/url&gt;
+    &lt;/repository&gt;
+    ...
+&lt;/repositories&gt;
+
+&lt;dependencies&gt;
+    ...
+    &lt;dependency&gt;
+        &lt;groupId&gt;me.lucyy&lt;/groupId&gt;
+        &lt;agtifactId&gt;pronouns-api&lt;/agtifactId&gt;
+        &lt;version&gt;VERSION&lt;/version&gt;
+            &lt;scope&gt;provided&lt;/scope&gt;
+    &lt;/dependency&gt;
+    ...
+&lt;/dependencies&gt;</code></pre>
+Or with Gradle:
+<pre><code class="language-kotlin" style="font-size: 0.9em">repositories {
+    maven("https://repo.lucyy.me/repository/public/")
+}
+
+dependencies {
+    compileOnly("me.lucyy:pronouns-api:VERSION")
+}</code></pre>
+
+<h3>Getting an instance</h3>
+Get an instance of PronounHandler using the RegisteredServiceProvider;
+
+<pre><code class="language-java"style="font-size: 0.9em">RegisteredServiceProvider&lt;PronounHandler&gt; rsp = getServer()
+    .getServicesManager()
+    .getRegistration(PronounHandler.class);
+PronounHandler handler = rsp.getProvider();</code></pre>
+<script src="https://branding.lucyy.me/prism.js"></script>
