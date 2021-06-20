@@ -1,11 +1,13 @@
-const fs = require("fs");
-const desc = fs.readFileSync("projects/pronouns-desc.html", {encoding: "utf-8"});
 module.exports = {
     name: "ProNouns",
     colours: ["blue", "purple"],
     shortdesc: "ProNouns is a Minecraft server plugin that lets players set their pronouns, which server admins can substitute into server messages.",
-    desc: desc,
-    wiki: "https://docs.lucyy.me/en/latest/pronouns/",
+    //wiki: "https://docs.lucyy.me/en/latest/pronouns/",
+    wiki: {
+        "commands": "Commands",
+        "config": "Config",
+        "testpage3": "Test Page 3"
+    },
     links: {
         "GitHub": "https://github.com/lucyy-mc/pronouns",
         "Polymart": "https://lucyy.me/pronouns",

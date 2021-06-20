@@ -6,11 +6,11 @@ const projects = require("../util/project-manager")
 
 module.exports = class {
     async updateData() {
-        console.log("Updating GitHub data...");
+        console.log("Updating GitHub projects...");
         let response = await fetch(config.profileUrl);
         this.githubData = await response.json();
         setInterval(this.updateData, 3600000);
-        console.log("Updated GitHub data");
+        console.log("Updated GitHub projects");
     }
     constructor(app) {
         this.updateData();

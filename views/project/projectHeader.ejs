@@ -77,10 +77,10 @@
 <div class="container">
     <div class="content">
         <div style="margin: 0 auto">
-            <% if (release != null) { %>
-            <div class="button" onclick="openDownloadsDialog(<%= JSON.stringify(release) %>)">
+            <% if (releases.length > 0) { %>
+            <div class="button" onclick="openDownloadsDialog(<%= JSON.stringify(releases[0]) %>)">
                 <h2>Download</h2>
-                <p>Version <%= release.name %></p>
+                <p>Version <%= releases[0].name %></p>
                 <% } else { %>
                 <div class="button">
                     <h2>No downloads</h2>
@@ -88,10 +88,20 @@
                 </div>
                 <% if (project.hasOwnProperty("supports")) { %>
                     <div>
-                        <h3 class="gradient-text">Supported Platforms</h3>
+                        <h3><span class="gradient-text">Supported Platforms</span></h3>
                         <ul>
                             <% for (let platform of project.supports) { %>
                                 <li><%= platform %></li>
+                            <% } %>
+                        </ul>
+                    </div>
+                <% } %>
+                <% if (project.hasOwnProperty("wiki")) { %>
+                    <div>
+                        <h3><span class="gradient-text">Wiki</span></h3>
+                        <ul>
+                            <% for (let page of Object.keys(project.wiki)) { %>
+                                <li><a href="/<%= project.simpleName + "/wiki/" + page %>"><%= project.wiki[page]%></a></li>
                             <% } %>
                         </ul>
                     </div>
@@ -108,7 +118,7 @@
                     }
                             for (let item of items) { %>
                         <span class="button<% if (page === item){ %> selected<% } %>"
-                              onclick="window.location.href = './<%= item %>'">
+                              onclick="window.location.href = '/<%=project.simpleName %>/<%= item %>'">
                     <%= item.charAt(0).toUpperCase() %><%= item.substr(1) %>
                 </span>
                     <% } %>

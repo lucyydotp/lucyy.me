@@ -1,7 +1,6 @@
 module.exports = {
     name: "Squirtgun",
     colours: ["yellow", "purple"],
-    desc: "Squirtgun is a multi-purpose Minecraft plugin library, providing a command framework, formatting engine and basic cross-platform server API.",
     links: {
         "GitHub": "https://github.com/lucyy-mc/squirtgun"
     },

@@ -7,9 +7,6 @@ module.exports = {
 
     gradient: project => `linear-gradient(135deg, ${project.colours.map(x => `var(--colour-${x})`).join(", ")})`,
     gradientDark: project => `linear-gradient(135deg, ${project.colours.map(x => `var(--colour-dark-${x})`).join(", ")})`,
-    simpleName: name => name.toLowerCase()
-        .replaceAll(" ", "-")
-        .replaceAll(/[^A-Za-z0-9-_]/g, ""),
 
     getLatestArtifacts: async function(project) {
         return this.getLatestBuildId(project)
