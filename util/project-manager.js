@@ -8,6 +8,7 @@ out.init = async function () {
         let project = require(`../projects/${file.substr(0, file.length - 3)}`);
         if (project.hasOwnProperty("releases")) {
             for (let release of project.releases) {
+                console.log(`Caching artifacts for ${project.name} ${release.name}`)
                 release.artifacts = await projectUtils.getArtifacts(project, release.build);
             }
         }

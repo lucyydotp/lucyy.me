@@ -5,6 +5,7 @@ module.exports = {
     colours: ["blue", "purple"],
     shortdesc: "ProNouns is a Minecraft server plugin that lets players set their pronouns, which server admins can substitute into server messages.",
     desc: desc,
+    wiki: "https://docs.lucyy.me/en/latest/pronouns/",
     links: {
         "GitHub": "https://github.com/lucyy-mc/pronouns",
         "Polymart": "https://lucyy.me/pronouns",

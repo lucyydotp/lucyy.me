@@ -59,11 +59,18 @@ module.exports = (app) => {
 
     app.get("/:project/source", (req, res) => {
         const project = getProject(req);
-        if (project === undefined) {
+        if (project === undefined || project.source === undefined) {
             res.redirect("/");
             return;
         }
-
         res.redirect(project.source);
+    });
+    app.get("/:project/wiki", (req, res) => {
+        const project = getProject(req);
+        if (project === undefined || project.wiki === undefined) {
+            res.redirect("/");
+            return;
+        }
+        res.redirect(project.wiki);
     });
 };

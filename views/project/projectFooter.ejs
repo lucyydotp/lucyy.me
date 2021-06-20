@@ -20,6 +20,14 @@
                 innerDiv.appendChild(div);
             }
         }
+
+        let closeDiv = document.createElement("div");
+        closeDiv.classList.add("button");
+        closeDiv.classList.add("bg-light-grey");
+        closeDiv.style.background = "var(--colour-light-grey)";
+        closeDiv.innerHTML = "<h4>Close</h4>";
+        innerDiv.onclick = () => dialogDiv.remove();
+        innerDiv.appendChild(closeDiv);
         dialogDiv.appendChild(innerDiv);
         document.body.appendChild(dialogDiv);
     }

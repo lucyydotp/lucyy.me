@@ -99,9 +99,12 @@
             </div>
             <div style="flex-grow: 1">
                 <div class="ribbon">
-                    <% let items = ["description", "updates", "beta", "wiki", "config"];
-                    if (project.hasOwnProperty("source")) {
-                        items.push("source")
+                    <% const items = ["description", "updates"];
+                    const optionals = ["wiki", "source"]
+                    for (let optional of optionals) {
+                        if (project.hasOwnProperty(optional)) {
+                            items.push(optional);
+                        }
                     }
                             for (let item of items) { %>
                         <span class="button<% if (page === item){ %> selected<% } %>"
