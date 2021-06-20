@@ -10,7 +10,8 @@ const getProject = req => {
 
 module.exports = (app) => {
     app.get("/:project", (req, res) => {
-        res.redirect(req.url + "/description");
+        let url = req.url;
+        res.redirect(url + (url.endsWith("/") ? "" : "/") + "description");
     })
 
     app.get("/:project/description", async (req, res) => {
