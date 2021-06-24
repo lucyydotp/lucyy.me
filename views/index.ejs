@@ -1,4 +1,4 @@
-<%- include("header.html") %>
+<%- include("header.ejs") %>
 
 <style>
     :root {
@@ -55,9 +55,10 @@
 <p style="text-align:center">Here's some of the stuff I'm working on.</p>
 <div class="flowbox projects">
 
-    <% for (let project of projects) { %>
+    <!--todo - sorting doesnt work-->
+    <% for (let project of projects.sort((one, two) => one.order - two.order)) { %>
         <div>
-            <h3><span class="gradient-text" style="background-image: <%= gradient(project) %>"><%= project.name %></span></h3>
+            <h3><a href="<%= project.simpleName %>"><span class="gradient-text" style="background-image: <%= gradient(project) %>"><%= project.name %></span></a></h3>
             <p><%= project.shortdesc ?? project.desc %></p>
             <%- Object.keys(project.links).map(x => `<a href=${project.links[x]}>${x}</a>`).join(" | ") %>
         </div>

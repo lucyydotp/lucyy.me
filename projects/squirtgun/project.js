@@ -1,6 +1,7 @@
 module.exports = {
     name: "Squirtgun",
     colours: ["yellow", "purple"],
+    order: 1,
     links: {
         "GitHub": "https://github.com/lucyy-mc/squirtgun"
     },
