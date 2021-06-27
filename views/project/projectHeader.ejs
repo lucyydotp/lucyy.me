@@ -9,6 +9,12 @@
         flex-wrap: wrap;
     }
 
+    .content > *, .ribbon {
+        overflow-x:auto;
+        max-width: 100%;
+        list-style-position: inside;
+    }
+
     .content div {
         flex-basis: 20em;
         margin: 1em;
@@ -33,6 +39,7 @@
 
     .ribbon {
         margin-left: 0 !important;
+        margin-right: 0 !important;
         text-align: center;
         white-space: nowrap;
     }
