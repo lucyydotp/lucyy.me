@@ -20,31 +20,6 @@
 </p>
 
 <p>
-<h3>Commands</h3>
-<ul>
-    <li><b>/pronouns</b> - Shows all available commands for the plugin.
-    </li>
-    <li><b>/pronouns set</b> - Sets your pronouns. If you use more than one set, put your "preferred" set first (they'll
-        be used in automated messages if configured), and put the rest separated by a space. For example, /pronouns set
-        she they
-    </li>
-    <li><b>/pronouns clear</b> - Clears your pronouns
-
-    </li>
-    <li><b>/pronouns show</b> - Shows your, or another player's, pronouns.
-    </li>
-    <li><b>/pronouns list</b> - List all predefined pronoun sets. (if yours aren't listed here, you can still use them -
-        see "Custom Pronouns" below for more info!)
-    </li>
-    <li><b>/pronouns preview</b> - Test out your pronouns in a sentence.
-    </li>
-    <li><b>/pronouns sudo</b> (requires pronouns.admin permission) - Run a pronouns command as another user.
-    </li>
-    <li><b>/pronouns reload</b> (requires pronouns.admin permission) - Reloads the configuration file.
-    </li>
-</ul>
-</p>
-<p>
 <h3>Predefined Pronouns</h3>
 To use these sets, you don't need to type out all 6 pronouns! Just use the first one out of these sets:
 <ul>
@@ -72,49 +47,6 @@ To prevent abuse, the plugin is equipped with a basic regex-based filter. By def
 <b>from the config</b>. Players with the permission <b>pronouns.bypass</b> will not be affected by this
 </p>
 
-<p>
-<h3>PlaceholderAPI</h3>
-ProNouns provides a selection of PAPI placeholders so you can use pronouns in messages!
-Before using these, install the PlaceholderAPI expansion with <b>/papi ecloud download pronouns</b> followed by <b>/papi
-    reload</b>.
-<ul>
-    <li>%pronouns_pronouns% - pronouns, in the Subjective/Objective format ie She/Her
-    </li>
-    <li>%pronouns_subjective% - subjective pronoun
-    </li>
-    <li>%pronouns_objective% - objective pronoun
-    </li>
-    <li>%pronouns_progressive% - progressive pronoun
-    </li>
-    <li>%pronouns_possessiveadj% - possessive adjective
-    </li>
-    <li>%pronouns_possessivepro% - possessive pronoun
-    </li>
-    <li>%pronouns_reflexive% - reflexive pronouns
-    </li>
-    <li>%pronouns_all% - all 6 pronouns
-    </li>
-</ul>
-All placeholders also have some formatting modifiers that can be added to the end of the name to control capitalisation:
-<ul>
-    <li>upper - uppercase (SHE)
-
-    </li>
-    <li>lower - lowercase (she)
-
-    </li>
-    <li>capital - first letter uppercase, everything else lowercase (She)
-    </li>
-</ul>
-Some examples using the she/her pronoun set:
-
-<ul>
-    <li>%pronouns_subjective_upper% - SHE
-    </li>
-    <li>%pronoun_possessivepro_capital% - Hers
-    </li>
-</ul>
-</p>
 <p>
 <h3>Data Collection</h3>
 This plugin uses bStats to gather anonymised telemetry data. All data collected can be viewed at <a

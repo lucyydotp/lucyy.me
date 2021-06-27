@@ -3,7 +3,6 @@ module.exports = {
     colours: ["blue", "purple"],
     shortdesc: "ProNouns is a Minecraft server plugin that lets players set their pronouns, which server admins can substitute into server messages.",
     order: 0,
-    //wiki: "https://docs.lucyy.me/en/latest/pronouns/",
     wiki: {
         "commands": "Commands",
         "config": "Config",
@@ -34,7 +33,7 @@ module.exports = {
                 dir: "pronouns-bukkit/build/libs",
                 match: name => !name.endsWith("-nodeps.jar")
             },
-            Bungee: {
+            BungeeCord: {
                 dir: "pronouns-bungee/build/libs",
                 match: name => !name.endsWith("-nodeps.jar")
             },
@@ -61,6 +60,13 @@ module.exports = {
                 "New preview text",
                 "Moved from Maven to Gradle (this means nothing unless you're building the plugin yourself)",
                 "Fix dependency relocation issues"
+            ]
+        },
+        {
+            name: "1.3.1",
+            build: 301,
+            changelog: [
+                "Fixed some issues with the PlaceholderAPI expansion"
             ]
         }
     ],

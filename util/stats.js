@@ -35,18 +35,20 @@ function DataSet(project) {
     }
 }
 
+const dataSets = new Map();
 let dataSet = new DataSet();
 
 module.exports = {
 
     push: async function () {
-        let dataCloned = Object.assign({}, dataSet);
-        delete dataCloned.addData();
+        await dataSets.map(async set => {
+            let dataCloned = Object.assign({}, set);
 
-        await client.collection("stats").updateOne(
-            {timestamp: dataSet.timestamp},
-            {$set: dataCloned},
-            {upsert: true})
+            await client.collection("stats").updateOne(
+                {timestamp: dataSet.timestamp},
+                {$set: dataCloned},
+                {upsert: true})
+        });
     },
 
     addData: function (data) {
