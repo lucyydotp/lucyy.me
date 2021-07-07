@@ -2,7 +2,7 @@ const express = require("express");
 const config = require("./config.json");
 const morgan = require("morgan");
 const projectManager = require("./util/project-manager");
-const stats = require("./util/stats");
+// const stats = require("./util/stats");
 const passport = require("passport");
 const bodyParser = require("body-parser");
 const GitHubStrategy = require("passport-github2");
@@ -53,5 +53,5 @@ const rte = new (require("./routes/index"))(app);
 require("./routes/projects")(app);
 
 projectManager.init()
-    .then(() => stats.init())
+    //.then(() => stats.init())
     .then(() => app.listen(port, () => console.log(`Listening on port ${port}`)));
