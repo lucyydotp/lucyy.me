@@ -1,3 +1,7 @@
+/*
+ * Copyright © Lucy Poulton 2021.  All rights reserved.
+ */
+
 const config = require("../config.json");
 const projectUtils = require("../util/project-utils");
 const projects = require("../util/project-manager");
@@ -33,7 +37,7 @@ module.exports = (app) => {
         }
 
         let params = getBaseParams(project);
-        params.title = `${project.name} by __lucyy`;
+        params.title = `${project.name} by Lucy Poulton`;
         params.page = "description";
         res.render("project/description", params)
     });
@@ -46,7 +50,7 @@ module.exports = (app) => {
         }
 
         let params = getBaseParams(project);
-        params.title = `Updates | ${project.name} by __lucyy`;
+        params.title = `Updates | ${project.name} by Lucy Poulton`;
         params.page = "updates";
         res.render("project/updates", params);
     });
@@ -83,7 +87,7 @@ module.exports = (app) => {
         const fileName = req.params["page"];
 
         let params = getBaseParams(project);
-        params.title = `${project.wiki[fileName]} | ${project.name} by __lucyy`;
+        params.title = `${project.wiki[fileName]} | ${project.name} by Lucy Poulton`;
         params.page = "wiki";
         params.wikiPage = fs.readFileSync(`projects/${project.simpleName}/${fileName}.html`);
         res.render("project/wiki", params);

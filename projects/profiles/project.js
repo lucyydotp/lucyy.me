@@ -1,3 +1,7 @@
+/*
+ * Copyright © Lucy Poulton 2021.  All rights reserved.
+ */
+
 module.exports = {
     name: "ProFiles",
     colours: ["green", "blue"],

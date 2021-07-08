@@ -1,3 +1,7 @@
+/*
+ * Copyright © Lucy Poulton 2021.  All rights reserved.
+ */
+
 const fs = require("fs");
 const projectUtils = require("./project-utils");
 

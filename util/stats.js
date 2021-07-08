@@ -1,3 +1,7 @@
+/*
+ * Copyright © Lucy Poulton 2021.  All rights reserved.
+ */
+
 const config = require("../config.json");
 const {MongoClient} = require("mongodb");
 const cron = require("node-cron");

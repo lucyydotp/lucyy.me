@@ -1,3 +1,7 @@
+/*
+ * Copyright © Lucy Poulton 2021.  All rights reserved.
+ */
+
 const express = require("express");
 const config = require("./config.json");
 const morgan = require("morgan");

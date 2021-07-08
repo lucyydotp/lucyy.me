@@ -1,3 +1,7 @@
+/*
+ * Copyright © Lucy Poulton 2021.  All rights reserved.
+ */
+
 const http = require("http");
 const fetch = require("node-fetch");
 const config = require("../config.json");
@@ -19,7 +23,7 @@ module.exports = class {
             res.render("index",
                 {
                     github: this.githubData,
-                    title: "__lucyy",
+                    title: "Lucy Poulton",
                     projects: projects,
                     gradient: projectUtils.gradient
                 })
