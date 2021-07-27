@@ -6,13 +6,28 @@
         --gradient: linear-gradient(135deg, var(--colour-dark-purple), var(--colour-dark-blue));
 
     }
-    #github > div *, .icon * {
+
+    .icon * {
         vertical-align: middle;
-        padding-left: 5px;
+        text-align: left;
+        display: inline-block;
     }
+
+    .icon {
+        align-self: center;
+    }
+
+    .icon-inner {
+        display: flex;
+        flex-direction: column;
+        width: max-content;
+        margin: auto;
+    }
+
     a {
         color: inherit;
     }
+
     .bg-gradient {
         background: var(--gradient);
     }
@@ -36,19 +51,24 @@
 <div class="flowbox top">
     <div>
         <h1>Hiya! I'm Lucy.</h1>
-        <p>I do silly computer stuff. I mostly work in Java and occasionally JavaScript, but I love tinkering and I'm always up for playing with something new.</p>
-        <div>
-            <div class="icon"><a href="https://github.com/lucyy-mc"><ion-icon size="large" name="logo-github"></ion-icon><span>lucyy-mc</span></a></div>
-            <div class="icon"><a href="https://support.lucyy.me"><ion-icon size="large" name="logo-discord"></ion-icon><span>__lucyy#0001 | https://support.lucyy.me</span></a></div>
-            <div class="icon"><a href="mailto:contact@lucypoulton.net"><ion-icon size="large"  name="mail-outline"></ion-icon><span>contact@lucypoulton.net</span></a></div>
-        </div>
+        <p>I do silly computer stuff. I mostly work in Java and occasionally JavaScript, but I love tinkering and I'm
+            always up for playing with something new.</p>
     </div>
-    <div id="github">
-        <h2>GitHub stats</h2>
-        <div><ion-icon name="git-commit-outline"></ion-icon><span><%= github["commits"] %> commits</span></div>
-        <div><ion-icon name="star-outline"></ion-icon><span><%= github["stars"] %> stars</span></div>
-        <div><ion-icon name="book-outline"></ion-icon><span><%= github["repos"] %> repos</span></div>
-        <div><ion-icon name="people-outline"></ion-icon><span>Contributed to <%= github["contributed"] %> repos</span></div>
+    <div class="icon">
+        <div class="icon-inner">
+            <span>
+                <ion-icon size="large" name="logo-github"></ion-icon>
+                <a href="https://github.com/lucyy-mc">lucyy-mc</a>
+            </span>
+            <span>
+                <ion-icon size="large" name="logo-discord"></ion-icon>
+                __lucyy#0001 | <a href="https://discord.lucypoulton.net">discord.lucypoulton.net</a>
+            </span>
+            <span>
+                <ion-icon size="large" name="mail-outline"></ion-icon>
+                lucy at lucypoulton dot net
+            </span>
+        </div>
     </div>
 </div>
 <h2 style="margin-top: 2em">Projects</h2>
@@ -56,7 +76,9 @@
 <div class="flowbox projects">
     <% for (let project of projects.sort((one, two) => one.order - two.order)) { %>
         <div>
-            <h3><a href="<%= project.simpleName %>"><span class="gradient-text" style="background-image: <%= gradient(project) %>"><%= project.name %></span></a></h3>
+            <h3><a href="<%= project.simpleName %>"><span class="gradient-text"
+                                                          style="background-image: <%= gradient(project) %>"><%= project.name %></span></a>
+            </h3>
             <p><%= project.shortdesc ?? project.desc %></p>
             <%- Object.keys(project.links).map(x => `<a href=${project.links[x]}>${x}</a>`).join(" | ") %>
         </div>
